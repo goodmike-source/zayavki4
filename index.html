@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Заявки на возврат</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🌗 Переключатель темы -->
+<button id="theme-toggle" style="float:right; margin: 10px;">🌙</button>
+
+  <h1>Таблица статусов возврата / диагностики</h1>
+
+  <div class="filter-box">
+    <label for="status-filter">Фильтр по статусу:</label>
+    <select id="status-filter">
+      <option value="">Все</option>
+      <option value="Принят">Принят</option>
+      <option value="Отправлен">Отправлен</option>
+      <option value="На диагностике">На диагностике</option>
+      <option value="Готов к выдаче">Готов к выдаче</option>
+      <option value="Требуется звонок">Требуется звонок</option>
+      <option value="Отказано">Отказано</option>
+    </select>
+    <input type="text" id="search-box" placeholder="Поиск по клиенту или товару...">
+  </div>
+
+  <div class="add-box">
+    <h3>Добавить заявку</h3>
+    <input type="text" id="new-client" placeholder="Клиент">
+    <input type="text" id="new-product" placeholder="Товар">
+    <input type="text" id="new-service-id" placeholder="Номер обращения">
+    <input type="text" id="new-comment" placeholder="Комментарий">
+    <button id="add-request-btn">Добавить</button>
+  </div>
+
+  <table id="status-table">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Дата заявки</th>
+        <th>Клиент</th>
+        <th>Товар</th>
+        <th>Номер обращения</th>
+        <th>Статус</th>
+        <th>Дата изменения</th>
+        <th>Комментарий</th>
+        <th>Изменить</th>
+        <th>Действия</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <button id="export-btn">📥 Скачать заявки</button>
+<button id="import-btn">📤 Загрузить файл</button>
+<input type="file" id="import-file" style="display:none" />
+
+  <!-- Модальное окно -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div id="modal-body" class="modal-scrollable"></div>
+      <span class="close">&times;</span>
+      <h2>Детали заявки</h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

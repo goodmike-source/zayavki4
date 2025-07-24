@@ -1,0 +1,250 @@
+/* === Общие стили === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f4f4f4;
+  color: #000;
+  transition: all 0.3s ease;
+}
+h1 {
+  text-align: center;
+}
+.filter-box {
+  margin-bottom: 10px;
+}
+button,
+.primary-btn,
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+/* === Таблица === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background: #333;
+  color: white;
+}
+table tr:hover {
+  background-color: #f0f0f0;
+}
+.status {
+  font-weight: bold;
+}
+
+/* === Кнопки === */
+button {
+  padding: 4px 8px;
+  margin: 2px;
+  cursor: pointer;
+}
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.primary-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.primary-btn:hover {
+  background-color: #0056b3;
+}
+
+/* === Модальное окно === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  padding-top: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  width: 600px;
+  max-height: 90vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.modal-content h2 {
+  padding: 20px;
+  margin: 0;
+  background: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+}
+.modal-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+.modal-footer,
+.modal-actions {
+  padding: 10px 20px;
+  background: #fff;
+  text-align: right;
+  border-top: 1px solid #ddd;
+}
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* === Секции внутри модалки === */
+.modal-section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.modal-section h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #333;
+}
+.modal-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.modal-section input,
+.modal-section select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 3px;
+  box-sizing: border-box;
+}
+
+/* === Картинки === */
+.modal img,
+.image-preview img {
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px;
+}
+.image-preview {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* === Кнопка звонка === */
+.call-btn {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 6px 12px;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.call-btn:hover {
+  background: #218838;
+}
+
+/* === История изменений === */
+.history-list {
+  padding-left: 20px;
+  font-size: 13px;
+  color: #444;
+}
+
+/* === Цвета статусов === */
+.status-принят {
+  background-color: #e2e3e5;
+  color: #343a40;
+}
+.status-отправлен {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+.status-на-диагностике {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+.status-готов-к-выдаче {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+.status-требуется-звонок {
+  background-color: #f8d7da;
+  color: #842029;
+}
+.status-отказано {
+  background-color: #f5c2c7;
+  color: #842029;
+}
+
+/* === Альтернативные стили статусов (иконки?) === */
+.status-received    { color: #007bff; font-weight: bold; }
+.status-sent        { color: #17a2b8; }
+.status-diagnostic  { color: #ffc107; }
+.status-ready       { color: #28a745; font-weight: bold; }
+.status-call        { color: #fd7e14; }
+.status-denied      { color: #dc3545; font-weight: bold; }
+
+/* === Тёмная тема === */
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark-theme table {
+  background-color: #1e1e1e;
+}
+body.dark-theme table td,
+body.dark-theme table th {
+  border-color: #333;
+}
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+body.dark-theme .modal-content {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+body.dark-theme .primary-btn {
+  background-color: #444;
+  color: #fff;
+}
+body.dark-theme .primary-btn:hover {
+  background-color: #666;
+}
+body.dark-theme .modal-section {
+  border-color: #333;
+}
+body.dark-theme #qrcode canvas {
+  background: #fff;
+}
+body.dark-theme table tr:hover {
+  background-color: #2a2a2a;
+}
